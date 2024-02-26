@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navhear GPS Tracker</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+        }
+        h1, h2, #mapLink {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navhear GPS Tracker</h1>
+    <h2>Location Details</h2>
+    <table id="myTable">
+        <tr>
+            <th>Latitude , Longitude</th>
+            <th>12.934235, 77.692971</th>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>28/02/2024</td> 
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>Location Recieved</td> 
+        </tr>
+        
+    </table>
+    <p id="mapLink"></p>
+    <script>
+        var table = document.getElementById('myTable');
+        var latLong = table.rows[0].cells[1].innerHTML; 
+        var linkText = "Click here to see the location on Google Maps";
+        document.getElementById('mapLink').innerHTML = '<a href="https://www.google.com/maps/search/?api=1&query=' + latLong + '">' + linkText + '</a>';
+    </script>
+</body>
+</html>
